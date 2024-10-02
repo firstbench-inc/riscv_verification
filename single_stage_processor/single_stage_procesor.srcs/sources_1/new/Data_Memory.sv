@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 02.10.2024 04:30:24
+// Create Date: 02.10.2024 23:25:11
 // Design Name: 
-// Module Name: instruction_memory
+// Module Name: Data_Memory
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,23 +20,25 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module instruction_memory#(parameter data_width = 32, address_width = 32)(
-    input logic [address_width-1:0]mem_add,
-    input logic clk,
-    output logic [data_width-1:0]instruction
-);
+module Data_Memory(input logic AluResult,
+                   input logic clk,
+                   input logic memwrite,
+                   input logic [31:0]Writedata,
+                   output logic [31:0] Readdata
 
-logic [data_width-1:0] memory [0:2**address_width-1];
-logic [data_width-1:0] data_out;
+    );
+ 
+logic [31:0] memory [0:2**32-1];
+logic [31:0] data_out;
+logic [31:0] address;
     always_ff @(posedge clk ) begin
-        if (mem_add < 2**address_width) begin
-            memory[mem_add] <= data_out;
+        if (memwrite) begin
+            memory[AluResult] <= Writedata;
         end
-    
-        
+        address = AluResult;
     end
     always_comb begin : data_assign
-         instruction = data_out;
+         Readdata = memory[address];
     end
 
 endmodule
