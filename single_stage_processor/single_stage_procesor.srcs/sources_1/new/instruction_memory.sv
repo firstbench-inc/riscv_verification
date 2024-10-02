@@ -30,7 +30,7 @@ logic [data_width-1:0] memory [0:2**address_width-1];
 logic [data_width-1:0] data_out;
     always_ff @(posedge clk ) begin
         if (mem_add < 2**address_width) begin
-            memory[mem_add] <= data_out;
+            data_out <= memory[mem_add];
         end
     
         
