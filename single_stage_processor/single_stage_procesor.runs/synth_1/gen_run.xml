@@ -1,24 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1727816257">
-  <File Type="PA-TCL" Name="riscvsingle.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="riscvsingle_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="riscvsingle_reports.tcl"/>
-  <File Type="RDS-RDS" Name="riscvsingle.vds"/>
-  <File Type="RDS-UTIL" Name="riscvsingle_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="riscvsingle_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="riscvsingle.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="riscvsingle_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="riscvsingle_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1728208435">
+  <File Type="PA-TCL" Name="RISCV_COMPLETE.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="RISCV_COMPLETE_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="RISCV_COMPLETE_reports.tcl"/>
+  <File Type="RDS-RDS" Name="RISCV_COMPLETE.vds"/>
+  <File Type="RDS-UTIL" Name="RISCV_COMPLETE_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="RISCV_COMPLETE_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="RISCV_COMPLETE.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RISCV_COMPLETE_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="RISCV_COMPLETE_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/riscvsingle.sv">
+    <File Path="$PSRCDIR/sources_1/new/ALU.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/mux.sv">
+    <File Path="$PSRCDIR/sources_1/new/Data_Memory.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Register_File.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/control_unit.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/data_extender.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/instruction_memory.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux_2.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/program_counter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RISCV_COMPLETE.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/riscvsingle.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -32,10 +88,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/mux2.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="riscvsingle"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="RISCV_COMPLETE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

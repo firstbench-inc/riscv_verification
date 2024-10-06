@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log riscvsingle.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source riscvsingle.tcl" );
+         "-log RISCV_COMPLETE.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_COMPLETE.tcl" );
 
 
 

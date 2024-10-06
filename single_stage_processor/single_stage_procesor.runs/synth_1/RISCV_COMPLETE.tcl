@@ -28,7 +28,17 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_mem C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/prayer.mem
-read_verilog -library xil_defaultlib -sv C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/riscvsingle.sv
+read_verilog -library xil_defaultlib -sv {
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/ALU.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/Data_Memory.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/Register_File.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/control_unit.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/data_extender.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/instruction_memory.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/mux_2.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/program_counter.sv
+  C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/RISCV_COMPLETE.sv
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -38,10 +48,10 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 
-synth_design -top riscvsingle -part xc7a35tcpg236-1
+synth_design -top RISCV_COMPLETE -part xc7a35tcpg236-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef riscvsingle.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file riscvsingle_utilization_synth.rpt -pb riscvsingle_utilization_synth.pb"
+write_checkpoint -force -noxdef RISCV_COMPLETE.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file RISCV_COMPLETE_utilization_synth.rpt -pb RISCV_COMPLETE_utilization_synth.pb"
