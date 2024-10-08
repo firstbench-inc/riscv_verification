@@ -35,7 +35,7 @@ module control_unit(
     );
 
 logic [6:0] opcode;
-logic [5:0] funct3;
+logic [3:0] funct3;
 logic [6:0] funct7;
 logic [10:0] controls;
 logic RtypeSub;
@@ -61,10 +61,11 @@ endcase
 {regwire, ImmSrc, Alusrc, memwrite, ResultSrc, ALUOp, Pcsrc} = controls;
 
  RtypeSub = funct7[5] & opcode[5];
+ 
 case(ALUOp)
-
 2'b00: Aluctrl = 3'b000; //add
 2'b01: Aluctrl = 3'b010; //sub
+
 default: case(funct3)
 3'b000: if(RtypeSub)
             Aluctrl = 3'b010; //sub

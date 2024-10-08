@@ -2,11 +2,11 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Oct  8 00:10:16 2024
-# Process ID: 21160
+# Start of session at: Tue Oct  8 10:03:31 2024
+# Process ID: 3312
 # Current directory: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/tb_program_counter_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/program_counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/tb_program_counter_behav/webtalk/xsim_webtalk.tcl -notrace
+source D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/program_counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace

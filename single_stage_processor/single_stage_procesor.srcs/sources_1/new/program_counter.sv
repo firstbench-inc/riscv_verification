@@ -20,36 +20,104 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module program_counter(input logic [31:0] PcIn, ImmExt,
+/* module program_counter(input logic [31:0] PcIn, ImmExt,
                        input logic  PcSrc,
                        input logic [31:0] PcTarget, 
                        input logic clk,
                        output logic [31:0] pc_out
 
     );
-/*    
-always_ff @(posedge clk ) begin
-case(PcSrc)
-    1'b0: pc_out = PcIn + 4;
-    1'b1: pc_out = PcTarget + 4;
-    
-endcase
-    end*/
+
     
 logic [31:0]PCNext, PC;
 
 
 always_comb begin
 if(PcSrc) 
-    PCNext<= PcTarget+ImmExt;
+    PCNext= PcTarget+ImmExt;
 else
-    PCNext<= PcIn+4;
+    PCNext= PC+4;
 end
+
 
 always_ff @(posedge clk) begin
 PC<=PCNext;
 end
 
-assign pc_out=PC;
+initial begin
+//pc_out=PCNext;
+PcIn=PC;
+end
+//assign pc_out=PC;
+
+endmodule*/
+
+/*module program_counter(input logic [31:0] PcIn,
+                       input logic  PcSrc,
+                    //    input logic [31:0] PcTarget,
+                       input logic [31:0] ImmExt,
+                       input logic clk,
+                       output logic [31:0] pc_out
+
+    );
+
+logic [31:0] Pc;
+logic [31:0] PcNext;
+assign Pc=PcIn;
+
+always_comb  begin
+    if(PcSrc == 1'b1)
+        PcNext = Pc + ImmExt;
+    else
+        PcNext = Pc + 4;
+    
+end
+assign pc_out = Pc;
+
+always_ff @(posedge clk) begin
+     Pc<= PcNext;
+end
+
+endmodule*/
+
+
+module program_counter(
+    input logic [31:0] PcIn,
+    input logic PcSrc,
+    input logic [31:0] ImmExt,
+    input logic clk,
+    output logic [31:0] pc_out
+);
+
+    logic [31:0] Pc;         // Current value of the program counter
+    logic [31:0] PcNext;     // Next value of the program counter
+
+    // Initialize Pc with PcIn on reset or at the first clock cycle
+    always_ff @(posedge clk) begin
+        if (PcIn) begin
+            Pc <= PcIn;      // Set Pc to PcIn at the first clock cycle or reset condition
+        end else begin
+            Pc <= PcNext;    // Update Pc with the next value
+        end
+    end
+
+    // Calculate the next PC value based on PcSrc
+
+    
+    always_comb begin
+        if (PcSrc == 1'b1) begin
+            PcNext = Pc + ImmExt;  // If branching, add immediate value to the current PC
+            pc_out = PcNext;
+        end
+        else begin
+            PcNext = Pc + 4;       // Else, increment PC by 4
+            pc_out = PcNext;
+        end
+    end
+
+
+    // Output the current program counter value
+    //assign pc_out = PcNext;
 
 endmodule
+
