@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1'
+HD_PWD='D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log riscvsingle.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source riscvsingle.tcl
+EAStep vivado -log RISCV_COMPLETE.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_COMPLETE.tcl

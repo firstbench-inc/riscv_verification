@@ -23,20 +23,18 @@
 module instruction_memory#(parameter data_width = 32, address_width = 32)(
     input logic [address_width-1:0]mem_add,
     input logic clk,
-    output logic [data_width-1:0]data 
+    output logic [data_width-1:0]instruction
 );
 
 logic [data_width-1:0] memory [0:2**address_width-1];
 logic [data_width-1:0] data_out;
-    always_ff @(posedge clk ) begin
+        always_comb begin
         if (mem_add < 2**address_width) begin
+
             data_out <= memory[mem_add];
+            memory[mem_add] = data_out;
+
         end
-    
         
     end
-    always_comb begin : data_assign
-        assign data = data_out;
-    end
-
 endmodule

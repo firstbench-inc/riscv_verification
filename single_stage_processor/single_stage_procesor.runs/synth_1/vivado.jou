@@ -2,11 +2,11 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Wed Oct  2 02:27:39 2024
-# Process ID: 12584
-# Current directory: C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1
-# Command line: vivado.exe -log riscvsingle.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source riscvsingle.tcl
-# Log file: C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1/riscvsingle.vds
-# Journal file: C:/Users/yashp/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1\vivado.jou
+# Start of session at: Sun Oct  6 22:51:04 2024
+# Process ID: 21736
+# Current directory: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1
+# Command line: vivado.exe -log RISCV_COMPLETE.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV_COMPLETE.tcl
+# Log file: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1/RISCV_COMPLETE.vds
+# Journal file: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source riscvsingle.tcl -notrace
+source RISCV_COMPLETE.tcl -notrace

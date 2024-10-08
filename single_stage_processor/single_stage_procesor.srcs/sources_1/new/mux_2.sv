@@ -20,7 +20,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux_2(
-
-    );
+module mux_2(input logic a,b,c, output logic o);
+assign o = c ? b : a;
 endmodule
