@@ -88,7 +88,7 @@ module program_counter(
     input logic [31:0] PcIn,
     input logic PcSrc,
     input logic [31:0] ImmExt,
-    input logic clk,reset,
+    input logic clk,
     output logic [31:0] pc_out
 );
 

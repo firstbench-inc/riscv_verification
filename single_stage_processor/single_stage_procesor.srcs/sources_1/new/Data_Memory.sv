@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Data_Memory(input logic AluResult,
+module Data_Memory(input logic [31:0] AluResult,
                    input logic clk,
                    input logic memwrite,
                    input logic [31:0]Writedata,

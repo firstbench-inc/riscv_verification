@@ -1,0 +1,3 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+$finish called at time : 70 ns : File "D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sim_1/new/tb_control_unit.sv" Line 92

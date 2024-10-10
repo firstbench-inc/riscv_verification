@@ -120,7 +120,7 @@ module program_counter_tb;
     logic [31:0] PcIn;
     logic PcSrc;
     logic [31:0] ImmExt;
-    logic clk, reset;
+    logic clk;
 
     // Outputs
     logic [31:0] pc_out;
@@ -132,7 +132,7 @@ module program_counter_tb;
         .ImmExt(ImmExt),
         .clk(clk),
         .pc_out(pc_out),
-        .reset(reset)
+        
     );
 
     // Clock generation

@@ -31,10 +31,11 @@ logic [data_width-1:0] data_out;
         always_comb begin
         if (mem_add < 2**address_width) begin
 
-            data_out <= memory[mem_add];
-            memory[mem_add] = data_out;
+            //data_out <= memory[mem_add];
+            data_out= memory[mem_add];
 
         end
         
     end
+    assign instruction=data_out;
 endmodule

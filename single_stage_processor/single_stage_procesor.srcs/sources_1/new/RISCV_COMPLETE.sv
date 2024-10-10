@@ -29,7 +29,7 @@ module RISCV_COMPLETE(input logic [31:0] instruction,
                       output logic [31:0] Readdata2,
                       output logic [31:0] ReadData,
                       output logic [31:0] ImmExt,
-                      output logic [31:0] SrcResult,
+                      output logic [31:0] SrcResult,SrcResultAlu,
                       output logic [31:0] AluResult,
                       output logic  Alusrc,
                       output logic Pcsrc,
@@ -43,6 +43,14 @@ module RISCV_COMPLETE(input logic [31:0] instruction,
 
     );
 
+program_counter program_counter_inst(
+    .PcIn(PcIn),
+    .PcSrc(PcSrc),
+    .ImmExt(ImmExt),
+    .clk(clk),
+    .pc_out(pc_out)
+);
+
 
 instruction_memory instruction_memory_inst(
     .mem_add(pc_out),
@@ -51,13 +59,15 @@ instruction_memory instruction_memory_inst(
 );
 // initaializing the instruction memory
 
-program_counter program_counter_inst(
-    .PcIn(pc_out),
-    .PcSrc(1'b0),
-    .PcTarget(ImmExt),
+Register_File register_file_inst(
+    .Readdata1(Readdata1),
+    .Readdata2(Readdata2),
     .clk(clk),
-    .pc_out(pc_out)
+    .Writedata(SrcResult),
+    .regwrite(regwire)
+    // .WriteReg(control_unit_inst.WriteReg)
 );
+//initializing the register file
 //initializing the program counter
 
 control_unit  control_unit_inst(
@@ -75,35 +85,20 @@ control_unit  control_unit_inst(
 
 data_extender data_extender_inst(
     .instruction(instruction),
-    .ImmSrc(ImmSrc),
+    .ImmSrc(Immsrc),
     .ImmExt(ImmExt)
 );
+
 //initializing the data extender
-
-mux_2 Alusrc_mux(
-    .a(Readdata2),
-    .b(ImmExt),
-    .c(Alusrc),
-    .o(SrcResult)
-);
-
 ALU ALU_inst(
     .RD1(Readdata1),
-    .RD2(SrcResult),
+    .RD2(SrcResultAlu),
     .AluControl(Aluctrl),
     .AluResult(AluResult)
 );
 //initializing the ALU
 
-Register_File register_file_inst(
-    .Readdata1(Readdata1),
-    .Readdata2(Readdata2),
-    .clk(clk),
-    .Writedata(AluResult),
-    .regwrite(regwire)
-    // .WriteReg(control_unit_inst.WriteReg)
-);
-//initializing the register file
+
 
 Data_Memory data_memory_inst(
     .Readdata(ReadData),
@@ -113,6 +108,15 @@ Data_Memory data_memory_inst(
     // .MemRead(ReadData),
     .AluResult(AluResult)
 );
+
+
+mux_2 Alusrc_mux(
+    .a(Readdata2),
+    .b(ImmExt),
+    .c(Alusrc),
+    .o(SrcResultAlu)
+);
+
 
 mux_2 result_mux (
     .a(AluResult),
