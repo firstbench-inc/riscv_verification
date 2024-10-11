@@ -2,13 +2,12 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Wed Oct  9 09:54:56 2024
-# Process ID: 38868
-# Current directory: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/tb_control_unit_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Fri Oct 11 01:13:27 2024
+# Process ID: 11260
+# Current directory: C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/RISCV_COMPLETE_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/tb_control_unit_behav/webtalk/xsim_webtalk.tcl -notrace
-webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 51.402 ; gain = 1.168
-INFO: [Common 17-206] Exiting Webtalk at Wed Oct  9 09:55:01 2024...
+source C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.sim/sim_1/behav/xsim/xsim.dir/RISCV_COMPLETE_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Oct 11 01:13:27 2024...

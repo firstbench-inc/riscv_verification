@@ -23,14 +23,14 @@
 module control_unit(
                     
                     input logic [31:0]instruction,
-                    output logic Pcsrc,
+                    output logic PcSrc,
                     output logic [1:0] ResultSrc,
-                    output logic  Alusrc,
-                    output logic [2:0] Aluctrl,
+                    output logic  AluSrc,
+                    output logic [2:0] AluCtrl,
                     output logic [1:0] ALUOp,
                     output logic [1:0] ImmSrc,
-                    output logic regwire,
-                    output logic memwrite
+                    output logic RegWire,
+                    output logic MemWrite
 
     );
 
@@ -58,24 +58,24 @@ case (opcode)
 7'b1101111: controls =11'b1_11_0_0_10_0_00_1; //jal
 default: controls= 11'bx_xx_x_x_xx_x_xx_x;
 endcase
-{regwire, ImmSrc, Alusrc, memwrite, ResultSrc, ALUOp, Pcsrc} = controls;
+{RegWire, ImmSrc, AluSrc, MemWrite, ResultSrc, ALUOp, PcSrc} = controls;
 
  RtypeSub = funct7[5] & opcode[5];
  
 case(ALUOp)
-2'b00: Aluctrl = 3'b000; //add
-2'b01: Aluctrl = 3'b010; //sub
+2'b00: AluCtrl = 3'b000; //add
+2'b01: AluCtrl = 3'b010; //sub
 
 default: case(funct3)
 3'b000: if(RtypeSub)
-            Aluctrl = 3'b010; //sub
+            AluCtrl = 3'b010; //sub
         else
-            Aluctrl = 3'b000; //add, addi
-3'b111: Aluctrl = 3'b010 ; //and
-3'b110: Aluctrl = 3'b011; //or
-3'b100: Aluctrl = 3'b100; //xor
-3'b001: Aluctrl = 3'b001; //sll
-default:    Aluctrl = 3'bxxx;
+            AluCtrl = 3'b000; //add, addi
+3'b111: AluCtrl = 3'b010 ; //and
+3'b110: AluCtrl = 3'b011; //or
+3'b100: AluCtrl = 3'b100; //xor
+3'b001: AluCtrl = 3'b001; //sll
+default:    AluCtrl = 3'bxxx;
 endcase
 endcase
 end

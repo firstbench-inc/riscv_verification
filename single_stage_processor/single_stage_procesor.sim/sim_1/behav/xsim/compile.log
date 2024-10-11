@@ -1,4 +1,20 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/ALU.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/Data_Memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/RISCV_COMPLETE.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RISCV_COMPLETE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/Register_File.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register_File
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/control_unit.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module control_unit
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/GITHUB/P1/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sim_1/new/tb_control_unit.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_control_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/data_extender.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_extender
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/instruction_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instruction_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/mux_2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sources_1/new/program_counter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module program_counter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yashp/OneDrive/Documents/riscv_verification/single_stage_processor/single_stage_procesor.srcs/sim_1/new/tb_master_riscv.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RISCV_COMPLETE_tb

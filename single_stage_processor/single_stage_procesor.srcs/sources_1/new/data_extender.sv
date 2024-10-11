@@ -41,11 +41,11 @@ endmodule*/
 
 
 module data_extender(input logic [31:0] instruction,
-                     input logic [1:0] Immsrc,
+                     input logic [1:0] ImmSrc,
                      output logic [31:0]ImmExt);
                      
  always@(*) begin
- case(Immsrc)
+ case(ImmSrc)
  //I type
  2'b00: ImmExt={{20{instruction[31]}},instruction[31:20]};
  //stype

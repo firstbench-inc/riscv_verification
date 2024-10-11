@@ -23,10 +23,10 @@
 module Register_File (
     input logic clk,
     input logic [31:0] instruction,
-    input logic [31:0] Writedata,
-    input logic regwrite,
-    output logic [31:0] Readdata1,//can be5
-    output logic [31:0] Readdata2
+    input logic [31:0] WriteData,
+    input logic RegWrite,
+    output logic [31:0] ReadData1,//can be5
+    output logic [31:0] ReadData2
 );
 
     // 32 general-purpose registers (x0 - x31)
@@ -42,15 +42,15 @@ module Register_File (
 
     // Writing to the register file on the positive edge of the clock
     always_ff @(posedge clk) begin
-        if (regwrite) begin
-            registers[a3] <= Writedata;
+        if (RegWrite) begin
+            registers[a3] <= WriteData;
         end
     end
        
 
     // Reading from the register file
-    assign Readdata1 = registers[a1];
-    assign Readdata2 = registers[a2];
+    assign ReadData1 = registers[a1];
+    assign ReadData2 = registers[a2];
 
     
 

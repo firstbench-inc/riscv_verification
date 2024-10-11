@@ -22,9 +22,9 @@
 
 module Data_Memory(input logic [31:0] AluResult,
                    input logic clk,
-                   input logic memwrite,
-                   input logic [31:0]Writedata,
-                   output logic [31:0] Readdata
+                   input logic MemWrite,
+                   input logic [31:0]WriteData,
+                   output logic [31:0] ReadData
 
     );
  
@@ -32,13 +32,13 @@ logic [31:0] memory [0:2**32-1];
 logic [31:0] data_out;
 logic [31:0] address;
     always_ff @(posedge clk ) begin
-        if (memwrite) begin
-            memory[AluResult] <= Writedata;
+        if (MemWrite) begin
+            memory[AluResult] <= WriteData;
         end
         address = AluResult;
     end
     always_comb begin : data_assign
-         Readdata = memory[address];
+         ReadData = memory[address];
     end
 
 endmodule

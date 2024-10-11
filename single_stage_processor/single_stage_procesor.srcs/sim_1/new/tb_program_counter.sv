@@ -131,7 +131,7 @@ module program_counter_tb;
         .PcSrc(PcSrc),
         .ImmExt(ImmExt),
         .clk(clk),
-        .pc_out(pc_out),
+        .pc_out(pc_out)
         
     );
 
