@@ -34,7 +34,7 @@ module RISCV_COMPLETE(input clk,
     logic [31:0] ImmExt;
     logic [31:0] SrcResult;
     logic [31:0] SrcResultAlu;
-    logic [31:32] AluResult;
+    logic [31:0] AluResult;
     logic AluSrc;
     logic PcSrc;
     logic [1:0] ResultSrc;
