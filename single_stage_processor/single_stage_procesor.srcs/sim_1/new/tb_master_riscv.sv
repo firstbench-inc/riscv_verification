@@ -45,10 +45,11 @@ assign memory[0] = 32'b01000000001100010000000010110011;
     logic [1:0] ImmSrc;
     logic RegWire;
     logic MemWrite;
+    logic [31:0] instruction;
   // Instantiate the DUT (Device Under Test)
   RISCV_COMPLETE uut(
     .clk(clk),
-    .PcIn(PcIn)
+    .instruction(instruction)
   );
 
   // Clock generation
@@ -59,6 +60,6 @@ assign memory[0] = 32'b01000000001100010000000010110011;
     // Initialize signals
     clk = 1;
 
-    PcIn = -4;
+    instruction = 32'b01000000001100010000000010110011;
 end
 endmodule

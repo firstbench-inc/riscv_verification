@@ -30,14 +30,15 @@ module control_unit(
                     output logic [1:0] ALUOp,
                     output logic [1:0] ImmSrc,
                     output logic RegWire,
-                    output logic MemWrite
+                    output logic MemWrite,
+                    output logic [10:0] controls
 
     );
 
 logic [6:0] opcode;
 logic [3:0] funct3;
 logic [6:0] funct7;
-logic [10:0] controls;
+//logic [10:0] controls;
 logic RtypeSub;
 
 always_comb  begin
@@ -50,9 +51,9 @@ always_comb  begin
 case (opcode)
 
 //RegWrite_ImmSrc_ALUSrc_Memwrite_ResultSrc_Branch_ALUOp_Jump
-7'b000011: controls=11'b1_00_1_0_01_0_00_0; //lw
+7'b0000011: controls=11'b1_00_1_0_01_0_00_0; //lw
 7'b010011: controls=11'b0_01_1_1_00_0_00_0; //sw
-7'b011011: controls=11'b1_00_0_0_00_0_10_0; //r-type
+7'b0110011: controls=11'b1_00_0_0_00_0_10_0; //r-type
 7'b1100011: controls=11'b0_10_0_0_00_1_01_0;//beq
 7'b0010011: controls=11'b1_00_1_0_00_0_10_0;//ITYPEALU;
 7'b1101111: controls =11'b1_11_0_0_10_0_00_1; //jal

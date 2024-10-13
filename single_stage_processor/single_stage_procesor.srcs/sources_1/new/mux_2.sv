@@ -20,6 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux_2(input logic a,b,c, output logic o);
-assign o = c ? b : a;
+module mux_2(input logic [31:0] a,input logic [31:0] b,input logic c, output logic [31:0] o);
+always_comb begin
+        o = c ? b : a;
+    end
 endmodule

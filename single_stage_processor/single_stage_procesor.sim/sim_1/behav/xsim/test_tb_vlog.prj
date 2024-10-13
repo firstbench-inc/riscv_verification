@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
+"../../../../single_stage_procesor.srcs/sources_1/new/ALU.sv" \
+"../../../../single_stage_procesor.srcs/sources_1/new/Register_File.sv" \
+"../../../../single_stage_procesor.srcs/sources_1/new/control_unit.sv" \
+"../../../../single_stage_procesor.srcs/sources_1/new/data_extender.sv" \
+"../../../../single_stage_procesor.srcs/sources_1/new/mux_2.sv" \
+"../../../../single_stage_procesor.srcs/sources_1/new/test.sv" \
+"../../../../single_stage_procesor.srcs/sim_1/new/test_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

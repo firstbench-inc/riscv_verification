@@ -22,11 +22,12 @@
 // integration of all modules
 
 module RISCV_COMPLETE(input clk,
-                      input [31:0] PcIn
+//                      input [31:0] PcIn
+                      input logic [31:0] instruction
                        );
-    logic [31:0] instruction;
+//    logic [31:0] instruction;
 //    logic clk;
-//     logic [31:0] PcIn;
+     logic [31:0] PcIn;
     logic [31:0] pc_out;
     logic [31:0] ReadData1;
     logic [31:0] ReadData2;
@@ -34,7 +35,7 @@ module RISCV_COMPLETE(input clk,
     logic [31:0] ImmExt;
     logic [31:0] SrcResult;
     logic [31:0] SrcResultAlu;
-    logic [31:0] AluResult;
+    logic [31:32] AluResult;
     logic AluSrc;
     logic PcSrc;
     logic [1:0] ResultSrc;
